@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>BRP data analysis</title>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="styles/style.css">
+<!--[if IE 6]><link type="text/css" rel="stylesheet" href="styles/ie6.css"><![endif]-->
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="styles/ie7.css"><![endif]-->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+    <h1><a href="index.html">Short course on data analysis for physics students</a></h1>
+	<br>
+    <div id="nav">
+      <ul id="nav-pages">
+        <li><a href="index.html">This Course</a><span>/</span></li>
+        <li><a href="module1A.html">Module 1A</a><span>/</span></li>
+		<li><a href="module1B.html">Module 1B</a><span>/</span></li>
+		<li><a href="module2A.html">Module 2A</a><span>/</span></li>
+		<li><a href="module2B.html" class="current">Module 2B</a></li>
+      </ul>
+    </div>
+  </div>
+  
+ <div id="frontpage-content">
+ 
+	<p align="left">
+		<a href="#globalwarming">1. &ensp; GLOBAL WARMING</a><br>
+		<a href="#pandas">2. &ensp; ANALYZING ONLINE CLIMATE DATA USING PANDAS</a><br>
+		&emsp; &emsp; EXERCISE 7 (Python notebook)<br>
+	</p>
+ 
+		<div id="globalwarming"> <h3>Global Warming</h3></div>
+			<div id="frontpage-intro">
+			<p align="justify">There is an enormous amount of information that one can find on the internet about <span>global warming</span>. This includes scientific articles, cases of scientific mistakes and scientifc misconduct. Personally, in order to avoid long discussions I prefer a <span>more distant view as a scientist</span>: we are doing an experiment to measure the amount of global warming by putting large amounts of carbon dioxide into the atmosphere. This is <span>an experiment</span> that, ethically speaking, <span>we should not be doing</span>. This point is nicely summarized in <a href="https://xkcd.com/164/">this xkcd cartoon</a>. For those who want to know how important this could be have a look at the <a href="https://xkcd.com/1379/">xkcd cartoon about 4.5 degrees</a>.</p>
+			<p align="center"><img src="images/xkcd_part.png" width="80%" alt=""></p>
+			<p align="justify">To get an idea what we are looking for one could use the last 1000 years of a <a href="https://xkcd.com/1732/">cartoon of the global temperature</a> that is based on real scientific data from a 2003 paper. Note that the extrapolation to the future in the cartoon depends a lot on how much you average and smooth the data. As such, one should do a little more research to have a well-informed opinion about the effect of global warming and the exact magnitude.<p>
+		</div>	
+		<table width="100%"><tr><td></td> <td><p style="text-align:right;"><a href="#pandas">NEXT >></a></p></td> </tr> </table> 
+		
+		<div id="pandas"> <h3>Analyzing online climate data using Pandas</h3></div>
+			<div id="frontpage-intro">
+        		<p align="justify"> This exercise is about trying to answer a much simpler question: <span>Can we prove a statistically significant temperature rise in the Netherlands over the past 100+ years using the data of the Dutch metrology institute?</span> Note that a statistically significant effect in the Netherlands does not imply statistically significant global warming. Similarly, if there is no measurable effect in one country this does not mean that there is no global warming. Also, finding a statistically significant effect does not neccesarily point to a correlation with increased levels of carbon dioxide or other greenhouse gases as the cause of a local or global effect.</p>
+				<p align="justify">More information on this topic (in Dutch) can be found via the <a href="https://www.knmi.nl/nederland-nu/klimatologie" target="_blank">climate website of KNMI</a>. Particularly relevant is the <a href="https://www.knmi.nl/klimaatdashboard" target="_blank">KNMI climate dashboard</a>. The goal of this exercise is not to reproduce this graph, it is to verify and form your own opinion. Do take into account that KNMI may have more data, more understanding and more sophisticated models to analyze the data.</p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#DDEEFF;">
+				<p align="justify"><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/Global Warming.ipynb" target="_blank" class="read-post-link">Exercise 7: Global warming in the Netherlands (Jupyter notebook) &raquo;</a></p>
+			</div>		  
+		<table width="100%"><tr><td><p><a href="#globalwarming"><< PREVIOUS</a></p></td> <td></td> </tr> </table> 
+</div>
+
+  </div>
+  <div id="footer">
+    <p class="copyright">Copyright &copy; <a href="http://www.universiteitleiden.nl">Leiden University</a> - All Rights Reserved | Design By <a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
+  </div>
+</div>
+</body>
+</html>

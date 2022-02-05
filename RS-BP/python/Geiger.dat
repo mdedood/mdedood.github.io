@@ -1,0 +1,14 @@
+/* Data for exercise number 2
+/* We recorderd the number of counts in one minute on a Geiger counter 
+/* waiting 1 hour between the measurements
+
+/* Tijd (hr)    Counts
+0,997
+1,520
+2,265
+3,127
+4,70
+5,35
+6,16
+7,7
+8,3

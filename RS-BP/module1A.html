@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>BRP data analysis</title>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="styles/style.css">
+<!--[if IE 6]><link type="text/css" rel="stylesheet" href="styles/ie6.css"><![endif]-->
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="styles/ie7.css"><![endif]-->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+    <h1><a href="index.html">Short course on data analysis for physics students</a></h1>
+	<br>
+    <div id="nav">
+      <ul id="nav-pages">
+        <li><a href="index.html">This Course</a><span>/</span></li>
+        <li><a href="module1A.html" class="current">Module 1A</a><span>/</span></li>
+		<li><a href="module1B.html">Module 1B</a><span>/</span></li>
+		<li><a href="module2A.html">Module 2A</a><span>/</span></li>
+		<li><a href="module2B.html">Module 2B</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <h3>Module 1A // Data analysis, mistakes and misconduct</h3>
+  
+  <div id="frontpage-content">
+  
+		<p align="left">
+		    <b>To complete this module you should complete the questionaires. You can view the result afterwards. The results will be discussed during the live sessions organized for students at Leiden university and serve to prepare for these sessions.</b><br><br>
+		
+			<a href="#ethics">1. &ensp; INTRODUCTION - ETHICS IN SCIENCE</a><br>
+			<a href="#figures">2. &ensp; MAKING BETTER SCIENTIFIC FIGURES</a><br>
+			&emsp; &emsp; PREREQUISITE: Making better figures (Python notebook)<br>
+			&emsp; &emsp; QUESTIONAIRE: Making better figures (Google forms)<br>
+			<a href="#honeybees">3. &ensp; CASE STUDY: AFRICANIZED HONEYBEES</a><br>
+			&emsp; &emsp; QUESTIONAIRE: Africanized honeybees (Google forms)<br>
+			&emsp; &emsp; CASE STUDY: Africanized honeybees (Python notebook)<br>
+			&emsp; &emsp; QUESTIONAIRE: Fitting a parabola (Google forms)<br>
+			<a <a href="#fusion">4. &ensp; CASE STUDY: COLD FUSION</a><br>
+			<a <a href="#stapel">5. &ensp; CASE STUDY: DIEDERIK STAPEL</a><br>
+			<a <a href="#schon">6. &ensp; CASE STUDY: JAN HENDRIK SCHÖN</a><br>
+			&emsp; &emsp; QUESTIONAIRE: Ethical standards (Google forms)<br>
+		</p>
+			<div id="ethics"> <h3>1. Introduction - Ethics in Science</h3></div>
+			<div id="frontpage-intro">
+				<p align="center">
+					<iframe width="600" height="450" src="https://www.youtube.com/embed/j4p-WHBHcX4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</p>
+				<br>
+				<p align="justify">A great inspiration for this module part 1A is an <a href="https://www.visionlearning.com/en/library/Process-of-Science/49/Scientific-Ethics/161/reading">online course on scientific ethics, by Anthony Carpi and Anne E. Egger</a>. I have included shortened versions of their text and have given a few examples that are particularly relevant for the physical sciences.</p>
+				<br>
+				<p align="justify"><span>Ethics is a set of moral obligations that define right and wrong in our practices and decisions</span>. Scientific ethics calls for honesty and integrity in all stages of scientific practice, from data collection to publication and beyond. Many of the ethical principles in science relate to the production of unbiased scientific knowledge, which is critical when others try to build upon or extend research findings. The open publication of data, peer review, replication, and collaboration required by the scientific ethic all <span>help to keep science moving forward</span> by validating research findings and confirming or raising questions about results.</p>
+				<br>
+				<p align="justify">Some <span>breaches of the ethical standards</span>, such as fabrication of data, <span>are dealt with by the scientific community</span> through means similar to ethical breaches in other disciplines – removal from a job, for example. But less obvious challenges to the ethical standard occur more frequently. Sometimes scientists simply make mistakes that may appear to be ethical breaches. <span>In this course we focus on good use of data analysis methods to avoid erronous interpretation of scientific data.</span></p>
+				<br>
+				<p align="justify">Scientists have long maintained an informal system of ethics and guidelines for conducting research. <span>Documented ethical guidelines did not develop until the mid-twentieth century</span>. This started after a series of well-publicized ethical breaches and war crimes during the second world war. Ethical standards that help guide scientific research and ensure that research efforts (and researchers) abide by several core principles.</p>
+				<br>
+				<p align="Center"><b>Core principles of an ethical standard for scientific research</b></p>
+				<br>
+				<p>
+				1. Honesty in reporting of scientific data;<br>
+				2. Careful transcription and analysis of scientific results to avoid error;<br>
+				3. Independent analysis and interpretation of results that is based on data and not on the influence of external sources;<br>
+				4. Open sharing of methods, data, and interpretations through publication and presentation;<br>
+				5. Sufficient validation of results through replication and collaboration with peers;<br>
+				6. Proper crediting of sources of information, data, and ideas;<br>
+				7. Moral obligations to society in general, and, in some disciplines, responsibility in weighing the rights of human and animal subjects.<br>
+				<br>
+				Note: This list is likely incomplete. These principles should be discussed with peers, colleagues, supervisors, independent experts, etc.
+				</p>
+			</div>
+			<table width="100%"><tr><td><p> </p></td> <td><p style="text-align:right;"><a href="#figures">NEXT >></a></p></td> </tr> </table> 			
+			
+			<div id="figures"> <h3>2. Making better scientific figures</h3></div>
+			<div id="frontpage-intro">
+				<p align="justify">An important prerequisite to honest reporting of scientific data is to make sure that figures are not misleading. It should not be difficult for others to verify scientific conclusions that follow from a figure. The notebook below will give some hints and tips on how to make better figures. It should be a good starting point for figures that are good enough to put in a Bachelor research thesis or scientific article. </p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#FFEEDD;">
+				<p><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/BetterFigures.ipynb?flush_cache=true" target="_blank" class="read-post-link">Prerequisite: Making better scientific figures (Jupyter notebook) &raquo;</a></p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#DDEEFF;"><p><a href="https://forms.gle/dVX6Zz8JNfCnqaqb8" target="_blank" class="read-post-link">Complete the short questionaire (Google forms)</a> 
+			
+			</p>
+			</div>
+			<table width="100%"><tr><td><p><a href="#ethics"><< PREVIOUS</a></p></td> <td><p style="text-align:right;"><a href="#honeybees">NEXT >></a></p></td> </tr> </table> 
+			
+			<div id="honeybees"><h3>3. Case Study: Africanized Honeybees</h3></div>
+			<div id="frontpage-intro">
+				<p align="justify">We will investigate the data analysis in a published journal article written by David W. Roubik, <i>Competitive Interactions Between Neotropical Pollinators and Africanized Honey Bees</i> published as Science <b>201</b>, 1030 (1978). You can read the full article in pdf <a href="https://www.researchgate.net/profile/David_Roubik/publication/6096088_Competitive_Interactions_Between_Neotropical_Pollinators_and_Africanized_Honey_Bees/links/0fcfd513947f2001fc000000/Competitive-Interactions-Between-Neotropical-Pollinators-and-Africanized-Honey-Bees.pdf" target="_blank">here</a>. </p>
+				<p align="justify"><a href="https://stri.si.edu/scientist/david-roubik">David W. Roubik</a> is a respected entomologist working at the Smithsonian Tropical Research Institute who has devoted his scientific life to studies of africanized honey bees. These so-called killer bees are an invasive species and compete for resources with other bee species. Watch the <span>YouTube video</span> below for a brief introduction to the subject.</p>
+				<p align="center">
+					<iframe width="600" height="450" src="https://www.youtube.com/embed/d-7kKqgPEGs" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#DDEEFF;">
+				<p><a href="https://forms.gle/PcfMtKbE89PKFuoB6" target="_blank" class="read-post-link">Complete the short questionaire (Google forms)</a> </p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#FFEEDD;">
+				<p> <a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/Honeybees.ipynb?flush_cache=true" target="_blank" class="read-post-link">Case study: Africanized honeybees (Jupyter notebook)&raquo;</a></p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#DDEEFF;">
+				<p><a href="https://forms.gle/zfJ7qYXyA4ue67iw9" target="_blank" class="read-post-link">Complete the short questionaire (Google forms)</a> </p>
+			</div>
+		<table width="100%"><tr><td><p><a href="#figures"><< PREVIOUS</a></p></td> <td><p style="text-align:right;"><a href="#fusion">NEXT >></a></p></td> </tr> </table> 
+
+		<div id="fusion"><h3>4. Case study: Cold Fusion</h3></div>
+		<div id="frontpage-intro">
+			<p align="justify">Nuclear fusion creates four times more energy than nuclear fission, and four million times more energy than a chemical reaction, such as the burning of gas, oil or coal. A single glass of sea water could produce the same amount of energy as burning a barrel of oil, and it would release no waste. Fusion could supply all of mankind's energy needs without contributing to global warming.</p>
+			<br>
+			<p align="justify">In 1989 Pons and Fleischman, then at the university of Utah, announced room-temperature nuclear fusion in a jar filled with heavy water (water comprised of deuterium and oxygen atoms). They then passed an electric current from a palladium cathode through the heavy water, and the palladium absorbed deuterium atoms, which according to Pons and Fleischmann, forced them to fuse, and generated heat and neutrons.</p>
+			<br>
+			<p align="justify">Scientists around the world tried to replicate the experiment. A team led by Dr. Nathan Lewis at the California Institute of Technology used more sensitive equipment than the Utah team had used, and they found no fusion had taken place. They also found that no neutrons, gamma rays, tritium or helium were emitted, as the Utah team had claimed. The interpretation of the experiments and the claims were severely criticized at the APS meeting in Baltimore (see the <a href=https://archive.nytimes.com/www.nytimes.com/library/national/science/050399sci-cold-fusion.html?scp=8&sq=ld&st=cse">N.Y. Times article: <i>Physicists Debunk Claim Of a New Kind of Fusion</i>, May 3, 1989</a> on the topic. They also made it to the <a href="http://content.time.com/time/covers/0,16641,19890508,00.html" target="_blank">cover of Time magazine</a>, something that only very few scientists have achieved.</p>
+			<p align="center"> <iframe width="600" height="450" src="https://www.youtube.com/embed/ocr_0cYHNEs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+			<p>For an in depth study see the <a href="https://undsci.berkeley.edu/article/cold_fusion_01" target="_blank">Cold fusion: A case study for scientific behavior</a> website by the understanding science team at the University of Berkely</p>
+		</div>
+		<table width="100%"><tr><td><p><a href="#honeybees"><< PREVIOUS</a></p></td> <td><p style="text-align:right;"><a href="#stapel">NEXT >></a></p></td> </tr> </table> 
+
+		<div id="stapel"><h3>5. Case study: Diederik Stapel</h3></div>
+		<div id="frontpage-intro">
+			<p>In 2011 Dutch psychologist Diederik Stapel was accused of scientific fraud. You could explore an <a href="https://www.apa.org/science/about/psa/2011/12/diederik-stapel#" target="_blank">interesting article (in english)</a> on the subject and international turmoil that this case generated. The video below (3 minutes) is a brief summary of the outcome of the research. Note that <span>this video is in Dutch</span>.</p>
+			<p align="center"><iframe width="600" height="450" src="https://www.youtube.com/embed/YV7CXTLgCjo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+		</div>
+		<table width="100%"><tr><td><p><a href="#fusion"><< PREVIOUS</a></p></td> <td><p style="text-align:right;"><a href="#schon">NEXT >></a></p></td> </tr> </table> 
+
+			
+		<div id="schon"><h3>6. Case study: Jan Hendrik Schön</h3></div>
+			<div id="frontpage-intro">
+			<p>You can read about the <a href="https://en.wikipedia.org/wiki/Sch%C3%B6n_scandal" target="_blank">Schön Scandal on the Wikipedia page</a>. This is a case of scientific misconduct. The important questions to ask are: Who is at fault here? What are the consequences for the scientific community.</p>
+			<p>There is Horizon Documentary (BBC) titled <i>The Dark Secret of Hendrik Schön</i>. You can watch <a href="https://youtu.be/Fz_x-YfydCM"> the entire documentary via YouTube</a>, but that would take too much time. Not all the material in the documentary is relevant to the case we want to discuss here (in fact the bits on nanotechnolgy are quite ridiculous). This first fragment of about 3 minutes explains the rise and status of Jan Hendrik Schön.</p>
+			<p align="center"><iframe width="600" height="450" src="https://www.youtube.com/embed/Fz_x-YfydCM?start=272&end=452;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+			<p>The second fragment of 12 minutes shows what is wrong with the results and how this was discovered.</p>
+			<p align="center"><iframe width="600" height="450" src="https://www.youtube.com/embed/Fz_x-YfydCM?start=2015&end=2735;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+		</div>
+		<br>
+		<div id="frontpage-intro" style="background-color:#DDEEFF;">
+				<p><a href="https://forms.gle/XyfhNXQKjGsui9XV7" target="_blank" class="read-post-link">Complete the questionaire on ethical standards (Google forms)</a> </p>
+		</div>
+		
+		<table width="100%"><tr><td><p><a href="#stapel"><< PREVIOUS</a></p></td> <td> </td> </tr> </table> 		
+		
+      </div>		  
+	</div>
+  </div>
+  <div id="footer">
+    <p class="copyright">Copyright &copy; <a href="http://www.universiteitleiden.nl">Leiden University</a> - All Rights Reserved | Design By <a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
+  </div>
+</div>
+</body>
+</html>

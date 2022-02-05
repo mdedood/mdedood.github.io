@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>BRP data analysis</title>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="styles/style.css">
+<!--[if IE 6]><link type="text/css" rel="stylesheet" href="styles/ie6.css"><![endif]-->
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="styles/ie7.css"><![endif]-->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+    <h1><a href="index.html">Short course on data analysis for physics students</a></h1>
+	<br>
+    <div id="nav">
+      <ul id="nav-pages">
+        <li><a href="index.html">This Course</a><span>/</span></li>
+        <li><a href="module1A.html">Module 1A</a><span>/</span></li>
+		<li><a href="module1B.html" class="current">Module 1B</a><span>/</span></li>
+		<li><a href="module2A.html">Module 2A</a><span>/</span></li>
+		<li><a href="module2B.html">Module 2B</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <h3>Module 1B // Errors, hypothesis testing and goodness of fit</h3>
+ 
+	<div id="frontpage-content"> 
+		<p align="left">
+			<a href="#error">1. &ensp; MEASUREMENT ERROR</a><br>
+			<a href="#average">2. &ensp; WEIGHTED AVERAGE</a><br>
+			&emsp; &emsp; EXERCISE 1 (Python notebook)<br>
+			<a <a href="#hypothesis">3. &ensp; HYPOTHESIS TESTING</a><br>
+			&emsp; &emsp; EXERCISE 2 (Python notebook)<br>
+			<a href="#fit">4. &ensp; LEAST SQUARES FITTING AND GOODNESS OF FIT</a><br>
+			&emsp; &emsp; EXERCISE 3 (Python notebook)
+		</p>
+
+		<div id="error"> <h3>1. Measurement error</h3></div>
+			<div id="frontpage-intro">
+				<p align="justify"><a href="https://en.wikipedia.org/wiki/Observational_error" target="_blank">Measurement error</a> is the difference between a measured value of a quantity and its true value. This error can be divided in a <span>systematic error</span> and a <span>random error</span>. Systematic errors are caused by an inaccuracy of the observation and/or measurement process and are inherent to the system. If the systematic error has a non-zero mean value then bias is introduced in the measurement. The random error causes the repeated measurements of the same quantity in an experiment to be inconsistent. <span>Measurement errors are an inherent part of the results of measurements and of the measurement process</span>.</p>
+				<p align="justify">The random or stochastic error tends to be normally distributed, i.e.the probability distribution is Gaussian. The reason <span>why random errors are Gaussian</span> can either be found as a <span>limiting case of an underlying physical process</span> such as counting statistics, or as the <span>result of many independent random errors</span>. In this latter case the <span>central limit theorem</span> predicts that the resulting probability distribution tends to a Gaussian irrespective of the underlying probability distribution.</p>
+				<p align="center">
+					<iframe width="600" height="450" src="https://www.youtube.com/embed/aXXoBjBpDzI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</p>
+				<p align="justify">There are <span>two definitions of the standard deviation</span>. Let us first assume that we know the <span>true mean \( \mu \)</span> of the distribution and we need to estimate the Variance \( \sigma^2 \) of that distribution using a finite sample of \( n \) measurements \( {x_i} \). In that case we find as our estimate of the Variance
+				$$ \sigma^2 = {1 \over n} \sum_{i=1}^n (x_i - \mu)^2 $$
+				In most cases we do not know the true mean of the distribution \( \mu \) and we need to estimate this average by calculating the <span>sample average \( \bar{x} \)</span>. In that case the best (unbiased estimator) of the standard deviation is given by
+				$$ s^2 = {1 \over (n-1)} \sum_{i=1}^n (x_i - \bar{x})^2 $$
+				The reason for the bias is that the true mean and the estimate sample average differ. The deviations relative the sample average \( \bar{x} \) are always smaller than the deviations relative to the true mean \( \mu \). A proof that an unbiased estimater is obtained by dividing by \( (n-1) \) is given in the following video.</p>
+				<p align="center"> <iframe width="600" height="450" src="https://www.youtube.com/embed/D1hgiAla3KI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+				<p align="justify">A final warning needs to be issued. The complete dataset might contain much more structure than what can be represented by a single value (with error bar) \( \bar{x} \pm s \). In theory one can keep both values approximately constant and make a plot of the data look like anything you want (mathematically this information is then hidden in the higher order moments of the distribution). See the <a href="https://www.autodesk.com/research/publications/same-stats-different-graphs" target="_blank">demonstration of how the same stats can produce quite different graphs</a>. <b> Remember to <em>always plot your data</em> before you perform a calculation.</b></p>
+			</div>
+		<table width="100%"><tr><td></td> <td><p style="text-align:right;"><a href="#average">NEXT >></a></p></td> </tr> </table> 
+	
+		<div id="average"> <h3>2. Weighted average</h3></div>
+			<div id="frontpage-intro">
+				<p align="center">
+					<iframe width="600" height="450" src="https://www.youtube.com/embed/ZmpGp7G-bRk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</p>
+				<p align="justify">The weighted average of a set of measurements is given by the formula $$\bar{x} = {\sum_i w_i x_i  \over \sum_i w_i}$$ where the weight \( w_i \) is  the inverse variance of each point, i.e. $$ w_i = {1 \over \sigma_i^2} $$ The error in the weighted mean is $$\sigma^2 = {1 \over \sum_i w_i}$$ using the same definition of the weight \( w_i \) as before. These formulas are easily derived: See the <a href="https://physics.stackexchange.com/questions/15197/how-do-you-find-the-uncertainty-of-a-weighted-average" target="_blank">mathematical details and background</a> for more information.</p>
+				<p align="justify">The exercise asks to calculate the weighted average of a set of different measurements of the speed of light that each include an error bar. You can imagine that these different measurements are obtained by different groups of students using the chocolate-bar-in-the-microwave method outlined in the video below. </p>
+				<p align="center"><iframe width="600" height="450"  src="https://www.youtube.com/embed/ky_HkElHgaM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+				</div>
+				<br>
+				<div id="frontpage-intro" style="background-color:#DDEEFF;">
+				<p align="justify"><em>&raquo; What do you estimate is the (relative) measurement error with this method?</em><br><em>&raquo; Is this a systematic error, a random error or both?</em>
+				</div>
+				<br>
+				<div id="frontpage-intro">
+				<p align="justify">Now try to do exercise 1 using the link to the Python based notebook below. You can use it to read the question, or you can download the notebook and perform the calculation. Note that this question can be answered equally welll using other methods (pen and paper, Microsoft excel, pocket calculator etc.). 
+				</p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#DDEEFF;">
+				<p align="justify"><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/SpeedofLight.ipynb" target="_blank" class="read-post-link">Exercise 1: Determining the speed of light (Jupyter notebook) &raquo;</a></p> 		
+			</div>
+		<table width="100%"><tr><td><p><a href="#error"><< PREVIOUS</a></p></td> <td><p style="text-align:right;"><a href="#hypothesis">NEXT >></a></p></td> </tr> </table> 
+			
+		<div id="hyopthesis"> <h3>3. Hypothesis testing</h3></div>
+			<div id="frontpage-intro">
+               	<p align="justify">For a set of values \({y_i}\) with errors \(\sigma_i\) one could wonder if the weighted average is indeed a good average. To do this we would need to estimate a probability that the datapoints are indeed close enough to the average, i.e. for a normal distribution we expect 65% of the datapoints to be less than 1 standard deviation from the average and 95% of the datapoints within two standard deviations. This can be quantified by calculating the squared error or squared deviation defined by
+				$$\chi^2 = \sum_i {(y_i - \bar{y})^2 \over \sigma_i^2}$$
+				For the weighted average this quantity appears directly in the maximum likelihood estimator that we used to find the correct formula for the weighted average. The correct weighted average is found by minimizing \( \chi^2 \).</p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#DDEEFF;">
+			    <p>
+				&raquo; <em>How to interpret the minimum value of  \( \chi^2 \)?</em><br>
+				&raquo; <em>It is the most likely value, but how likely is it?</em>
+				</p>
+			</div>
+			<br>
+			<div id="frontpage-intro">	
+				<p align="justify">
+				The notebook explains some of the basic properties of the \( \chi^2 \) distribution and the exercise applies the method to take a decision based on statistical arguments.</p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#FFEEDD;">
+				<p><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/chi-square.ipynb?flush_cache=true" target="_blank" class="read-post-link">The chi-squared distribution (Jupyter notebook) &raquo;</a></p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#DDEEFF;">
+				<p><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/Superconductors.ipynb?flush_cache=true" target="_blank" class="read-post-link">Exercise 2: Hypothesis testing (Jupyter notebook) &raquo;</a></p>
+			</div>
+		<table width="100%"><tr><td><p><a href="#average"><< PREVIOUS</a></p></td> <td><p style="text-align:right;"><a href="#fit">NEXT >></a></p></td> </tr> </table> 
+		
+		<div id="fit"> <h3>4. Least squares fitting and goodness of fit</h3></div>
+			<div id="frontpage-intro">	
+				<p align="justify"> Exercise 2 aims to quantify the probability to find the average using the datapoints and the average. It puts a number on how far the data is away from the average and if this is reasonable given the error bars on the datapoints. The underlying assumption is that the measurement errors are well-described by the normal distribution. One could use a routine to minimize \( \chi^2 \) and find the optimum value of the average as the fit parameter. This should give the same results as just calculating the average.</p>
+				<p align="justify"> We now take it one step further and consider the least-squares fit of an arbitrary function to a set of data. In that case the \( \chi^2 \) value is given by
+				$$\chi^2 = \sum_i {(y_i - f(x_i))^2 \over \sigma_i^2}$$
+				Whenever possible one should try to reduce the process of fitting a non-linear function to a set of data to a fit of a straight line. The reasoning behind this is that you can develop some good intuition to the problem of fitting a straight line to a set of data. The minimum value of \( \chi^2 \) for a straight line fit corresponds to the curve that maximes the likelihood (for details see <a href="https://ned.ipac.caltech.edu/level5/Stetson/Stetson1_1_1.html" target="_blank">this website</a>) </p>
+				<p align="center"><br><b>A complete fit procedure should:</b><br><br></p>
+				<p align="justify">
+				1. Give the values of the fit parameters<br>
+				2. Provide error estimates on those fit parameters<br>
+				3. Provide a measure of how good the fit is<br><br></p>
+				<p align="justify"> The procedure to do a non-linear least squares fit of a function to some data with an error bar in the y-direction is well-documented on the internet. For a particular example using Python library functions a good starting point are the <a href=" https://scipy-lectures.org/intro/scipy/auto_examples/plot_curve_fit.html" target="_blank">SciPy lecture notes on the use of curve fit</a>. This example does not include the error bar on the data and does not address the goodness of fit (it fails requirements 2 and 3). </p>
+				<p align="justify">
+				A more elaborate example including confidence intervals and an error bar on the data in the y-direction can be found via the
+				<a href="https://micropore.wordpress.com/2017/02/04/python-fit-with-error-on-y-axis/" target="_blank">Micropore blog: Python fit with error on y-axis</a>
+				</p>
+			</div>
+			<br>
+			<div id="frontpage-intro" style="background-color:#DDEEFF;">
+				<p><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/FallingBall.ipynb?flush_cache=true" target="_blank" class="read-post-link">Exercise 3: Simple least squares fit to a straight line (Jupyter notebook) &raquo;</a></p>
+			</div>
+			<br>
+			<div id="frontpage-intro">
+				<p align="center"><br><b>(*) Orthogonal distance regression: errors on x- and y-values</b><br><br></p>
+				<p align="justify">
+				An advanced topic that is often asked by students is what to do when you have an error on both the x and y values. The method to use in that case is called <span>orthogonal distance regression (ODR)</span> and is explained in a <a href="https://www.tutorialspoint.com/scipy/scipy_odr.htm" target="_blank">SciPy tutorial on ODR</a>. For a practical example of the use of ODR see 
+				<a href="https://micropore.wordpress.com/2017/02/07/python-fit-with-error-on-both-axis/" target="_blank">Micropore blog: Python fit with error on both axis</a>
+				Note that the the distance orthogonal to a function is mathematically not so easily-defined for a function other than a straight line. For a straight line fit, the orthogonal direction is uniquely defined by a straight line through the data point orthogonal to the line that fits the data.
+				</p>
+			</div>
+		<table width="100%"><tr><td><p><a href="#hypothesis"><< PREVIOUS</a></p></td> <td></td> </tr> </table> 
+		
+	</div>
+    
+  </div>
+  <div id="footer">
+    <p class="copyright">Copyright &copy; <a href="http://www.universiteitleiden.nl">Leiden University</a> - All Rights Reserved | Design By <a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
+  </div>
+</div>
+</body>
+</html>

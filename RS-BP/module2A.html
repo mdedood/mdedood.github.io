@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>BRP data analysis</title>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="styles/style.css">
+<!--[if IE 6]><link type="text/css" rel="stylesheet" href="styles/ie6.css"><![endif]-->
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="styles/ie7.css"><![endif]-->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+    <h1><a href="index.html">Short course on data analysis for physics students</a></h1>
+	<br>
+    <div id="nav">
+      <ul id="nav-pages">
+        <li><a href="index.html">This Course</a><span>/</span></li>
+        <li><a href="module1A.html">Module 1A</a><span>/</span></li>
+		<li><a href="module1B.html">Module 1B</a><span>/</span></li>
+		<li><a href="module2A.html" class="current">Module 2A</a><span>/</span></li>
+		<li><a href="module2B.html">Module 2B</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <h3>Module 2A // Non-linear least squares fitting</h3>
+  
+    <div id="frontpage-content">
+		<p align="left">
+			<a href="#propagate">1. &ensp; PROPAGATION OF ERRORS</a><br>
+			<a href="#exponential">2. &ensp; ANALYZING EXPONENTIAL DECAY</a><br>
+			&emsp; &emsp; EXERCISE 4 (Python notebook)<br>
+			<a <a href="#cavendish">3. &ensp; CAVENDISH EXPERIMENT: FINDING GOOD INITIAL PARAMETERS</a><br>
+			&emsp; &emsp; EXERCISE 5 (Python notebook)<br>
+			<a href="#deconvolution">4. &ensp; DECONVOLUTION OF A SPECTRUM WITH MULTIPLE PEAKS</a><br>
+			&emsp; &emsp; EXERCISE 6 (Python notebook)
+		</p>
+		
+		<div id="propagate"> <h3>1. Propagation of errors</h3></div>
+		<div id="frontpage-intro">
+		<p align="justify">As a reminder I give here a short derivation of the method of propagation of errors for a function \(f(x_1,x_2,\ldots,x_n) \). We are interested in the error or variance \( {\sigma_f}^2 \) of the function \( f \) that depends on variables \( x_i \) with variance \( {\sigma_i}^2 \). Consider, without loss of generality, the <span>Taylor expansion</span> in the point where all the \( x_i \) are equal to zero 
+		$$ f \approx f^0 + \sum_{i=1}^n \frac{\partial f}{\partial x_i} x_i $$
+		The variance is given in terms of the expection value of \( f \) and \( f^2 \)
+		$$ {\sigma_f}^2 = \langle (f-f^0)^2 \rangle - \langle (f-f^0) \rangle^2 \approx \langle (f-f^0)^2 \rangle $$
+		where we used the first order linear Taylor expansion in the last step. It is not difficult to take the square of the Taylor expansion. If we assume <span>independent variables</span> \( x_i \) then all the cross-correlations \( {\partial f \over \partial x_i}{\partial f \over \partial x_j} \) vanish (\( i \neq j \)) and the formula can be significantly simplified. 
+		$$ {\sigma_f}^2 = \sum_{i=1}^n \left(\frac{\partial f}{\partial x_i} \right)^2 {\sigma_i}^2 $$
+		This equation is most frequently used for error propagation.
+		</p>
+		<p><a href="https://en.wikipedia.org/wiki/Propagation_of_uncertainty" target="_blank" class="read-post-link">More complete overview of the propagation of uncertainty (Wikipedia page) &raquo;</a></p>
+		</div>
+		<table width="100%"><tr><td></td> <td><p style="text-align:right;"><a href="#exponential">NEXT >></a></p></td> </tr> </table> 
+	
+		<div id="exponential"> <h3>2. Analyzing exponential decay</h3></div>
+		<div id="frontpage-intro">
+			<p align="justify">Exponential decay (or exponential growth) is commonly observed in many problems (see also the video below). Exponential functions occur whenever the rate of change of some variable is proportional to that variable. For instance, the rate of radioactive decay events in a piece of material (change per unit time) is proportional to the amount of radiactive material \( M \):
+			$$ {d M \over dt} = - \Gamma M $$
+			where \( \Gamma \) is the decay rate. The solution to this equation is given by exponential decay:
+			$$ M(t) = M(0) e^{-\Gamma t}$$
+			Exponentials are frequently encountered in physics and fitting your data to an exponetial is a common task. One way is to reduce your data to a linear relation assuming no background and fit a straight line to your data after a transformation given by 
+			$$ \ln {M(t) \over M(0)} = -\Gamma t $$
+			The exercise explores possible sources of errors and mistakes in the data analysis of exponentially decaying or growing quantities.</p>
+			<p align="center">
+			<iframe width="600" height="450" src="https://www.youtube.com/embed/m2MIpDrF7Es" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+		</div>
+		<br>
+		<div id="frontpage-intro" style="background-color:#DDEEFF;">
+			<p><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/Exponential Decay.ipynb" target="_blank" class="read-post-link">Exercise 4: Fitting exponential decay (Jupyter notebook) &raquo;</a></p>
+		</div>
+		<table width="100%"><tr><td><p><a href="#propagate"><< PREVIOUS</a></p></td> <td><p style="text-align:right;"><a href="#cavendish">NEXT >></a></p></td> </tr> </table> 
+		
+		<div id="cavendish"> <h3>3. Cavendish experiment: Finding good initial parameters</h3></div>
+		<div id="frontpage-intro">
+			<p align="justify">The Cavendish experiment uses a <span>torsional balance</span> to measure the gravitational force between objects. The torsional balance records the amplitude as a function of time and from the oscillation period one could determine the value of the <span>gravitational constant \( G \)</span> in the gravitational law of Newton:
+			$$F=G {m_1 m_2 \over R^2}$$
+			where \(m_1, m_2 \) are the mass of the two objects and \( R \) is the distance between the objects. 
+			<p>
+			<p align="justify">Exercise 5 contains some hypothetical (computer generated) data of a damped harmonic oscillation that one typically finds in the Cavendih experiment. The goal is to fit these data and use the oscillation time to find the gravitational constant and error bar from the fit. The difficulty in this exercise is to find the <span>global minimum</span> in the least squares method and not one of the <span>local minima</span>.</p>
+			<p align="center"><iframe width="600" height="450" src="https://www.youtube.com/embed/jkjqrlYOW_0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+		</div>
+		<br>
+		<div id="frontpage-intro" style="background-color:#DDEEFF;">
+			<p><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/Cavendish.ipynb" target="_blank" class="read-post-link">Exercise 5: The Cavendish experiment (Jupyter notebook) &raquo;</a></p>
+		</div>
+		<table width="100%"><tr><td><p><a href="#exponential"><< PREVIOUS</a></p></td> <td><p style="text-align:right;"><a href="#deconvolution">NEXT >></a></p></td> </tr> </table> 
+		
+		<div id="deconvolution"> <h3>4. Deconvolution of a spectrum with multiple peaks</h3></div>
+		<div id="frontpage-intro">
+			<p align="justify">A common goal in spectroscopy techniques (XRD, NMR, optical spectroscopy, mass spectrometry, etc.) is to separate multiple peaks from a measured, noisy spectrum. The easy case is when the spectrum is free of background, contains only a few sharp peaks that are nicely separated becuase the apparatus has sufficient resolution. The more likely situation is that one encounters a spectrum with background and a few broader features that are not clearly resolved, for instance if you use a <a href="https://starfishmedical.com/blog/spectrometer-from-home-materials/" target="_blank">home-built spectrometer</a> in combination with incandescent lamps and LEDs. In such cases one resorts to data analysis techniques to find the underlying components.</p>
+			<p align="justify">This exercise explores the typical features and limitations of such peak-finding methods.</p>
+		</div>
+		<br>
+		<div id="frontpage-intro" style="background-color:#DDEEFF;">
+			<p><a href="https://nbviewer.jupyter.org/url/home.physics.leidenuniv.nl/~dood/RS-BP/python/Deconvolution.ipynb" target="_blank" class="read-post-link">Exercise 6: The position of spectral lines (Jupyter notebook) &raquo;</a></p>
+	    </div>	
+		<table width="100%"><tr><td><p><a href="#cavendish"><< PREVIOUS</a></p></td> <td></td> </tr> </table> 		
+	</div>
+
+  </div>
+  <div id="footer">
+    <p class="copyright">Copyright &copy; <a href="http://www.universiteitleiden.nl">Leiden University</a> - All Rights Reserved | Design By <a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
+  </div>
+</div>
+</body>
+</html>

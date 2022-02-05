@@ -1,0 +1,10 @@
+Datapoints for excercise 1
+A sphere is dropped from a height d at time t=0 sec
+We record the time it takes for the sphere to reach the ground
+
+Time (sec),Height (m)
+0.16,0.20
+0.40,1.00
+0.58,2.00
+0.72,3.00
+0.97,5.00
