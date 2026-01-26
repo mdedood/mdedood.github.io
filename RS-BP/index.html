@@ -31,13 +31,21 @@
   <div id="frontpage-content">
     <h3>Introduction</h3>
     <div id="frontpage-intro">
-      <p align="justify">This online course is designed as part of the <span>Bachelor Research Skills</span> course for third year physics students at Leiden university. The purpose of this course is to prepare students to the use of data analysis methods that they will need during their research project. Students should have a working knowledge of <span>Python</span> and he use of <span>Jupyter notebooks</span>. The focus of this course is on the interpretation of fit results, error bars and possible pitfalls and difficulties that are frequently encountered during experimental research. I assume that students have already used a computer to visualize their data and have done non-linear least square fitting of data using a standard python library, e.g. <span>SciPy</span>.</p>
+      <p align="justify">
+	  This online course is designed as part of the <span>Research Skills and Scientifc Integrity</span> course at Leiden University and is intended for third year physics students, , but may also be useful for other students with a similar background. This short course introduces the <span>statistical and data-analysis tools that are commonly used in experimental physics</span> and equips you with tools that you need during your research project. The focus is not only on performing calculations, but on <span>interpreting data, assessing uncertainty, and drawing scientifically sound conclusions</span>.
+	  </p><br>
+	  <p align="justify">
+	  You will learn how to analyse data using Python, evaluate hypotheses using statistical tests, fit models to data, and critically assess the results — including their limitations. Throughout the course, these methods are applied to realistic physics examples and real-world data, reflecting the kinds of problems encountered in laboratory courses, bachelor projects, and research. This course assumes that you have working knowlegde of <span>Python</span>, can work with <span>Jupyter notebooks</span> and that you have some prior exposure to experimental physics including data collection, data visualization and have done some least square fitting of data by using a standard Python library, e.g. <span>SciPy</span>. No advanced background in statistics is assumed; the necessary concepts are introduced as they are needed.
+	  </p>
     </div>
 	<table width="100%"><tr><td><p> </p></td> <td><p style="text-align:right;"><a href="#howto">NEXT >></a></p></td> </tr> </table> 
 	
-	<div id="howto"><h3>How to use this course?</h3></div>
+	<div id="howto"><h3>How this course works</h3></div>
 	<div id="frontpage-intro">
-		<p align="justify">This course consists of two modules that each contain a part A and part B. Each part is designed to take 1-1.5 hour to complete and contains a combination of quizzes using <span>Google forms</span>, some instruction videos and a set of <span>Jupyter notebooks</span> with detailed instructions, lecture notes etc. In principle these modules can be completed individually and independently, but discussion in small groups of 2-5 students is highly recommended.</p>
+		<p align="justify"> The course consists of short explanatory texts combined with interactive Jupyter notebooks. The notebooks contain exercises in which you analyse data, perform fits, and explore statistical behaviour numerically. Rather than focusing on abstract theory alone, the emphasis is on learning by doing: applying methods to realistic examples, interpreting results, and reflecting on their meaning in a scientific context.
+		</p><br>
+		<p align="justify"> 
+		The course is divided into four modules. The modules build on each other: you will start by developing good scientific practice and core statistical concepts, and then move on to more advanced fitting techniques and applications to real data. Each module contains a part A and part B. Each part is designed to take 1-1.5 hour to complete and contains a combination of quizzes using <span>Google forms</span>, some instruction videos and a set of <span>Jupyter notebooks</span> with detailed instructions, lecture notes etc. In principle these modules can be completed individually and independently, but discussion in small groups of 2-5 students is encouraged and highly recommended.</p>
 		<br>
 		<p align="justify">For physics students at Leiden university <span>live sessions</span> are planned for each part. These sessions will consist of 30 min. of interactive lecture/discussion on part A of each module. Short instructions and a question and answer session is available for the B part of the module afterwards. Students are expected to come prepared by completing the A part of each module. The B part of each module contains at least one exercise that needs to be handed in.</p>
 	</div>
@@ -47,6 +55,8 @@
 	<div id="frontpage-intro">
 		<p align="justify">
 		<span>Module 1A // Data analysis, mistakes and misconduct</span>
+		<br><br>
+		This module introduces <span>principles of scientific integrity, data presentation, and critical interpretation</span>. You will learn how figures can mislead, how to improve data visualisation, and how errors or misconduct have affected real scientific results through several case studies.
 		<br> <br> 
 		After completing this module the student:<br>
 		- is able to name and explain <span>ethical guidelines</span> for conducting scientific research; <br>
@@ -59,10 +69,10 @@
 		<p align="justify">
 		<span>Module 1B // Errors, hypothesis testing and goodness of fit</span>
 		<br> <br>
-		In this module students learn to the statisitical methods of hypothesis testsing.<br>
+		In this module you develop the <span>foundations of statistical data analysis</span>. Topics include measurement errors, weighted averages, hypothesis testing using χ², and assessing the quality of fits. These tools form the basis for much of experimental data analysis in physics.<br>
 		More specifically, the student can: <br>
 		- calculate the <span>chi-squared value</span> and use this to <span>test a hypothesis</span>;<br>
-		- asses the <span>quality of a fit</span> using the chi-squared dsitribution;<br>
+		- asses the <span>quality of a fit</span> using the χ² distribution;<br>
 		- dicuss the differences between various methods to <span>fit a straight line</span><br>
 		</p>
 	</div>
@@ -71,6 +81,7 @@
 		<p align="justify">
 		<span>Module 2A // Non-linear-least-squares fitting</span>
 		<br> <br>
+		This module extends fitting techniques to <span>non-linear models</span> and introduces propagation of errors. You will apply these methods to realistic physics problems such as exponential decay, the Cavendish experiment, and spectral peak fitting, and learn about practical challenges such as local minima and parameter correlations.<br><br>
 		This module contains three examples that teach the student to:<br>
 		- apply <span>non-linear-least-squares fitting</span> in different settings;<br>
 		- use the <span>method of error propagation</span> to calculate the error bar on a data point and <span>discuss the consequences</span> for non-linear-least-squares fitting;<br>
@@ -82,7 +93,7 @@
 		<p align="justify">
 		<span>Module 2B // Global warming in the Netherlands?</span>
 		<br> <br>
-		The goal of this module is to analyze a large online dataset using <span>Pandas</span>.<br>
+		In the final module you apply the techniques learned earlier to real observational data. Using climate data as an example, you will analyse trends, evaluate statistical significance, and reflect on the interpretation and limitations of statistical conclusions drawn from complex, real-world data sets using <span>Pandas</span>.<br>
 		After completion the student is able to: <br>
 		- use Pandas (in Python) on <span>large online datasets</span>.<br>
 		- have an informed opinion whether or not the <span>rise in temperature in the Netherlands</span> over the past century is statistically significant.<br>
